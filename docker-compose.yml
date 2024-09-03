@@ -1,0 +1,10 @@
+services:
+  app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "${APP_PORT}:${NGINX_PORT}"
+    restart: always
+    env_file:
+      - .env

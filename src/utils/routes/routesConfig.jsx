@@ -1,7 +1,4 @@
 import { Navigate } from "react-router-dom";
-import AuthPage from "../../pages/Auth/AuthPage";
-import LoginPage from "../../pages/Auth/Login/LoginPage";
-import RegisterPage from "../../pages/Auth/Register/RegisterPage";
 import Dashboard from "../../pages/Dashboard/DashboardPage";
 import ProfilePage from "../../pages/Dashboard/Profile/ProfilePage";
 import HomePage from "../../pages/Dashboard/Home/HomePage";
@@ -12,13 +9,26 @@ import AddProductPage from "../../pages/Dashboard/Product/AddProduct/AddProductP
 import ShoppingCart from "../../pages/ShoppingCart/ShoppingCart";
 import VitrinPage from "../../pages/Vitrin/VitrinPage";
 import IndexPage from "../../pages/Index/IndexPage";
+import SignIn from "../../pages/Auth/SignIn/SignIn";
+import SignUp from "../../pages/Auth/SignUp/SignUp";
+import EmailVerification from "../../pages/Auth/EmailVerification/EmailVerification";
 
 const authRoutes = [
-  { path: "auth", element: <AuthPage /> },
-  { path: "auth/login", element: <LoginPage /> },
-  { path: "login", element: <Navigate to="/auth/login" replace /> },
-  { path: "auth/register", element: <RegisterPage /> },
-  { path: "register", element: <Navigate to="/auth/register" replace /> },
+  { path: "auth/signin", element: <SignIn /> },
+  { path: "auth/login", element: <Navigate to="/auth/signin" replace /> },
+  { path: "signin", element: <Navigate to="/auth/signin" replace /> },
+  { path: "login", element: <Navigate to="/auth/signin" replace /> },
+
+  { path: "auth/email-verification", element: <EmailVerification /> },
+  {
+    path: "email-verification",
+    element: <Navigate to="/auth/email-verification" replace />,
+  },
+
+  { path: "auth/signup", element: <SignUp /> },
+  { path: "auth/register", element: <Navigate to="/auth/signup" replace /> },
+  { path: "signup", element: <Navigate to="/auth/signup" replace /> },
+  { path: "register", element: <Navigate to="/auth/signup" replace /> },
 ];
 
 const dashboardRoutes = [
